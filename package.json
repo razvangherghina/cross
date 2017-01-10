@@ -20,7 +20,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/razvangherghina/crosstest.git"
+        "url": "git+https://github.com/razvangherghina/cross.git"
     },
     "keywords": [
         "nodemon",
@@ -32,9 +32,9 @@
     "author": "Razvan Gherghina",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/razvangherghina/crosstest/issues"
+        "url": "https://github.com/razvangherghina/cross/issues"
     },
-    "homepage": "https://github.com/razvangherghina/crosstest#readme",
+    "homepage": "https://github.com/razvangherghina/cross#readme",
     "dependencies": {
         "body-parser": "^1.15.2",
         "cookie-parser": "^1.4.3",
