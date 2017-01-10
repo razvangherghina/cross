@@ -1,0 +1,67 @@
+{
+    "name": "mean",
+    "version": "0.0.1",
+    "description": "Crossover Test Application",
+    "main": "index.js",
+    "engines": {
+        "node": ">=5",
+        "npm": ">=3"
+    },
+    "scripts": {
+        "start-prod": "NODE_ENV=production npm run prod",
+        "prod": "node ./Code/server/build/index.js",
+        "clean": "rm -rf Code/server/build && mkdir Code/server/build",
+        "build-server": "babel -d ./Code/server/build ./Code/server/src -s",
+        "build": "npm run clean && npm run build-server",
+        "start": "NODE_ENV=development nodemon --exec 'babel-node ./Code/server/src/index.js' | bunyan",
+        "debug": "NODE_ENV=development nodemon --exec 'npm run lint && npm run build && node --debug ./Code/server/build/index.js'",
+        "lint": "eslint -c .eslintrc Code/server/src",
+        "force": "kill -9 $(lsof -i tcp:6789 | sed -n 2p | awk -F ' ' '{print $2}')"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/razvangherghina/crosstest.git"
+    },
+    "keywords": [
+        "nodemon",
+        "express",
+        "babel",
+        "es6",
+        "es7"
+    ],
+    "author": "Razvan Gherghina",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/razvangherghina/crosstest/issues"
+    },
+    "homepage": "https://github.com/razvangherghina/crosstest#readme",
+    "dependencies": {
+        "body-parser": "^1.15.2",
+        "cookie-parser": "^1.4.3",
+        "cors": "^2.7.1",
+        "dotenv": "^4.0.0",
+        "express": "^4.14.0",
+        "is_js": "^0.9.0",
+        "joi": "^10.1.0",
+        "lodash": "^4.14.1",
+        "mongoose": "^4.5.7",
+        "mongoose-gen": "^2.1.1",
+        "mongoose-paginate": "^5.0.0",
+        "query-string": "^4.2.2"
+    },
+    "devDependencies": {
+        "babel-cli": "^6.18.0",
+        "babel-core": "^6.11.4",
+        "babel-eslint": "^7.1.1",
+        "babel-preset-latest": "^6.16.0",
+        "bunyan": "^1.8.1",
+        "eslint": "^3.2.2",
+        "eslint-config-airbnb-base": "^11.0.1",
+        "eslint-plugin-import": "^2.2.0",
+        "morgan": "^1.7.0",
+        "nodemon": "^1.10.0"
+    },
+    "optionalDependencies": {
+        "fsevents": "1.0.17"
+    }
+}
